@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    
+
+    
+	
+	<script type="text/javascript">
+		$(function() {
+    $('#myform').submit(function() {
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            type: 'POST',
+            url: 'DistributionController.php',
+            data: formData,
+            processData: false,
+            contentType: false,
+			success: function(result) {
+			$('#the-return').append('<br>'+'<center>'+result+'</center>');
+			
+				
+        }
+        });
+        return false;
+    }); 
+})
+	</script>
+</head> 
+
+<body>
+
+<div class="header">
+	  <center><h1>Plogg PHP Test</h1></center>
+</div>
+
+<div class="container">
+	
+    <form id="myform" >
+		<div class="row">
+		  <div class="col-25">
+			<label for="total">Total</label>
+		  </div>
+		  <div class="col-75">
+			<input type="number" id="total" name="total" placeholder="Your total.." required="true">
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-25">
+			<label for="baseline">Baseline</label>
+		  </div>
+		  <div class="col-75">
+			<input type="number" id="baseline" name="baseline" placeholder="Your baseline.." min="0" max="100" required="true">
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-25">
+			<label for="sdate">Start</label>
+		  </div>
+		  <div class="col-75">
+			 <input type="date" id="start_date" name="start_date" placeholder="Your starting date.." required="true">
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-25">
+			<label for="edate">End</label>
+		  </div>
+		  <div class="col-75">
+			 <input type="date" id="end_date" name="end_date" placeholder="Your starting date.." required="true">
+		  </div>
+		</div>
+		<div class="row">
+		  <input type="submit" value="Submit">
+		</div>
+    </form>
+</div>
+
+
+
+	<div id="the-return">
+	<center><h1>Result:</h1></center>
+	</div>
+
+</body>
+
+</html>
