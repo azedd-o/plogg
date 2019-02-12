@@ -6,10 +6,10 @@
    
  
    
-   $test->setTotal(floatval($_POST["total"]));
-   $test->setBaseline(floatval($_POST["baseline"]));
-   $test->setStartDate($_POST["start_date"]);
-   $test->setEndDate($_POST["end_date"]);
+   $test->setTotal(htmlentities(floatval($_POST["total"])));
+   $test->setBaseline(htmlentities(floatval($_POST["baseline"])));
+   $test->setStartDate(htmlentities($_POST["start_date"]));
+   $test->setEndDate(htmlentities($_POST["end_date"]));
 
  
    
