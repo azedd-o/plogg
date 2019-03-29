@@ -1,6 +1,8 @@
-PLOGG PHP TEST:
+# PLOGG PHP TEST:
 
-This is a mini project that was used as a coding test for a web dev job. PHP Exercise
+#### This is a mini project that was used as a coding test for a web dev job. 
+
+## PHP Exercise
 
 Objective: Distribute a total amount randomly (within certain parameters) in a range of dates, excluding weekends. There should be a baseline that will define the minimum amount of the value assigned to a specific date. The returned result should be a unidimensional array with the following structure: 
 
